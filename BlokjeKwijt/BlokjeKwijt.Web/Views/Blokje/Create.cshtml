@@ -1,0 +1,68 @@
+﻿@model BlokjeKwijt.Web.Models.BlokjeViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>BlokjeViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BlokNummer" class="control-label"></label>
+                <input asp-for="BlokNummer" class="form-control" />
+                <span asp-validation-for="BlokNummer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lengte" class="control-label"></label>
+                <input asp-for="Lengte" class="form-control" />
+                <span asp-validation-for="Lengte" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Breedte" class="control-label"></label>
+                <input asp-for="Breedte" class="form-control" />
+                <span asp-validation-for="Breedte" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hoogte" class="control-label"></label>
+                <select asp-for="Hoogte" class="form-control" asp-items="@Html.GetEnumSelectList<Hoogte>()"/>
+                <span asp-validation-for="Hoogte" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nopjes" class="control-label"></label>
+                <input asp-for="Nopjes" class="form-control" />
+                <span asp-validation-for="Nopjes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KleurId" class="control-label"></label>
+                <select asp-for="KleurId" class="form-control" asp-items="@(new SelectList(Model.KleurenLijst, "Id", "Id"))"/>
+                <span asp-validation-for="KleurId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageName" class="control-label"></label>
+                <input asp-for="ImageName" class="form-control" />
+                <span asp-validation-for="ImageName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
