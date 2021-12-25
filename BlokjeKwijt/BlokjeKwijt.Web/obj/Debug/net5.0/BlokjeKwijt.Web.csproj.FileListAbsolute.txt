@@ -194,3 +194,7 @@ C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Web\obj\Debu
 C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Web\obj\Debug\net5.0\Razor\Views\Kleur\Create.cshtml.g.cs
 C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Web\obj\Debug\net5.0\Razor\Views\Kleur\Edit.cshtml.g.cs
 C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Web\obj\Debug\net5.0\Razor\Views\Kleur\Delete.cshtml.g.cs
+C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Web\obj\Debug\net5.0\Razor\Views\Aanvraag\Index.cshtml.g.cs
+C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Web\obj\Debug\net5.0\Razor\Views\Aanvraag\Details.cshtml.g.cs
+C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Web\obj\Debug\net5.0\Razor\Views\Aanvraag\Create.cshtml.g.cs
+C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Web\obj\Debug\net5.0\Razor\Views\Aanvraag\Delete.cshtml.g.cs

@@ -13,7 +13,7 @@ namespace BlokjeKwijt.Data
         public List<Blokje> GetBlokjes()
         {
             List<Blokje> blokjes = new();
-            using(var ctx = new BlokjeKwijtContext())
+            using (var ctx = new BlokjeKwijtContext())
             {
                 blokjes = ctx.Blokjes.Include(b => b.KleurBlokje).ToList();
             }
@@ -23,7 +23,7 @@ namespace BlokjeKwijt.Data
         public Blokje GetSingleBlokje(int id)
         {
             Blokje blokje = new();
-            using(var ctx = new BlokjeKwijtContext())
+            using (var ctx = new BlokjeKwijtContext())
             {
                 blokje = ctx.Blokjes.Include(b => b.KleurBlokje).FirstOrDefault(b => b.Id == id);
             }
@@ -33,7 +33,7 @@ namespace BlokjeKwijt.Data
         public List<Kleur> FillColorList()
         {
             List<Kleur> kleuren = new();
-            using(var ctx = new BlokjeKwijtContext())
+            using (var ctx = new BlokjeKwijtContext())
             {
                 kleuren = ctx.Kleuren.ToList();
             }
@@ -89,10 +89,42 @@ namespace BlokjeKwijt.Data
             ctx.Entry(kleur).State = EntityState.Deleted;
             ctx.SaveChanges();
         }
-
-
-
-
         #endregion Kleur
+
+        #region Aanvraag
+        public List<Aanvraag> GetAanvragen()
+        {
+            List<Aanvraag> aanvragen = new();
+            using (var ctx = new BlokjeKwijtContext())
+            {
+                aanvragen = ctx.Aanvragen.ToList();
+            }
+            return aanvragen;
+        }
+
+        public Aanvraag GetSingleAanvraag(int id)
+        {
+            Aanvraag aanvragen = new();
+            using (var ctx = new BlokjeKwijtContext())
+            {
+                aanvragen = ctx.Aanvragen.FirstOrDefault(b => b.Id == id);
+            }
+            return aanvragen;
+        }
+
+        public void AddAanvraag(Aanvraag aanvraag)
+        {
+            using var ctx = new BlokjeKwijtContext();
+            ctx.Entry(aanvraag).State = EntityState.Added;
+            ctx.SaveChanges();
+        }
+
+        public void DeleteAanvraag(Aanvraag aanvraag)
+        {
+            using var ctx = new BlokjeKwijtContext();
+            ctx.Entry(aanvraag).State = EntityState.Deleted;
+            ctx.SaveChanges();
+        }
+        #endregion Aanvraag
     }
 }
