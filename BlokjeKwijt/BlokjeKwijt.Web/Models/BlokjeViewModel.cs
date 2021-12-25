@@ -26,6 +26,6 @@ namespace BlokjeKwijt.Web.Models
         [Description("Mega Blokje")]
         Normaal_Blokje,
         [Description("Mega Blokje")]
-        Plat, Blokje
+        Plat_Blokje
     }
 }
