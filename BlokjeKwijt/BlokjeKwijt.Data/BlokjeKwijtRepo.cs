@@ -30,6 +30,32 @@ namespace BlokjeKwijt.Data
             return blokje;
         }
 
+        public List<Blokje> FilteredBlokjes(string bloknr, string lengte, string breedte, string nopjes)
+        {
+            using (var ctx = new BlokjeKwijtContext())
+            {
+                List<Blokje> blokjes = ctx.Blokjes.Include(b => b.KleurBlokje).ToList();
+
+                if (!string.IsNullOrEmpty(bloknr))
+                {
+                    blokjes = blokjes.Where(s => s.BlokNummer.ToString().Equals(bloknr)).ToList();
+                }
+                if (!string.IsNullOrEmpty(lengte))
+                {
+                    blokjes = blokjes.Where(l => l.Lengte.ToString().Equals(lengte)).ToList();
+                }
+                if (!string.IsNullOrEmpty(breedte))
+                {
+                    blokjes = blokjes.Where(h => h.Breedte.ToString().Equals(breedte)).ToList();
+                }
+                if (!string.IsNullOrEmpty(nopjes))
+                {
+                    blokjes = blokjes.Where(l => l.Nopjes.ToString().Equals(nopjes)).ToList();
+                } 
+                return blokjes;
+            }
+        }
+
         public List<Kleur> FillColorList()
         {
             List<Kleur> kleuren = new();
