@@ -32,20 +32,6 @@ namespace BlokjeKwijt.Web.Controllers
             };
         }
 
-        private Blokje ConvertToBlokjeData(BlokjeViewModel blokjeVM)
-        {
-            return new Blokje
-            {
-                Id = blokjeVM.Id,
-                BlokNummer = blokjeVM.BlokNummer,
-                Lengte = blokjeVM.Lengte,
-                Hoogte = (Data.Hoogte)blokjeVM.Hoogte,
-                Breedte = blokjeVM.Breedte,
-                Nopjes = blokjeVM.Nopjes,
-                KleurId = blokjeVM.KleurId,
-                ImageName = blokjeVM.ImageName
-            };
-        }
         // GET: OverKwijtController
         public ActionResult Index(string bloknr, string lengte, string breedte, string nopjes)
         {
@@ -56,73 +42,14 @@ namespace BlokjeKwijt.Web.Controllers
             return View(blokjeViewModels);
         }
 
-        // GET: OverKwijtController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
+        //public ActionResult Over()
+        //{
 
-        // GET: OverKwijtController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+        //}
 
-        // POST: OverKwijtController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        //public ActionResult Kwijt()
+        //{
 
-        // GET: OverKwijtController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: OverKwijtController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: OverKwijtController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: OverKwijtController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        //}
     }
 }

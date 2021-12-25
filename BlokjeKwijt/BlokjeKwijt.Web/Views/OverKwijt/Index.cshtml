@@ -47,38 +47,38 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BlokNummer)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Lengte)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Breedte)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hoogte)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nopjes)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.KleurId)
-            </td>
-            <td>
-                <img class="card-img-top" src="/Images/@Url.Content(item.ImageName)">
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BlokNummer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Lengte)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Breedte)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hoogte)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nopjes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KleurId)
+                </td>
+                <td>
+                    <img class="card-img-top" src="/Images/@Url.Content(item.ImageName)">
+                </td>
+                <td>
+                    @Html.ActionLink("Over", "Over", new { id = item.Id }) |
+                    @Html.ActionLink("Kwijt", "Kwijt", new { id = item.Id })
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
