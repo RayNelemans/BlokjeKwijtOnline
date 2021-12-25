@@ -47,5 +47,52 @@ namespace BlokjeKwijt.Data
             ctx.SaveChanges();
         }
         #endregion Blokje
+
+        #region Kleur
+        public List<Kleur> GetKleuren()
+        {
+            List<Kleur> kleuren = new();
+            using (var ctx = new BlokjeKwijtContext())
+            {
+                kleuren = ctx.Kleuren.ToList();
+            }
+            return kleuren;
+        }
+
+        public Kleur GetSingleKleur(int id)
+        {
+            Kleur kleuren = new();
+            using (var ctx = new BlokjeKwijtContext())
+            {
+                kleuren = ctx.Kleuren.FirstOrDefault(b => b.Id == id);
+            }
+            return kleuren;
+        }
+
+        public void AddKleur(Kleur kleur)
+        {
+            using var ctx = new BlokjeKwijtContext();
+            ctx.Entry(kleur).State = EntityState.Added;
+            ctx.SaveChanges();
+        }
+
+        public void EditKleur(Kleur kleur)
+        {
+            using var ctx = new BlokjeKwijtContext();
+            ctx.Update(kleur);
+            ctx.SaveChanges();
+        }
+
+        public void DeleteKleur(Kleur kleur)
+        {
+            using var ctx = new BlokjeKwijtContext();
+            ctx.Entry(kleur).State = EntityState.Deleted;
+            ctx.SaveChanges();
+        }
+
+
+
+
+        #endregion Kleur
     }
 }
