@@ -73,6 +73,13 @@ namespace BlokjeKwijt.Data
             ctx.SaveChanges();
         }
 
+        public void EditBlokje(Blokje blokje)
+        {
+            using var ctx = new BlokjeKwijtContext();
+            ctx.Update(blokje);
+            ctx.SaveChanges();
+        }
+
         public void DeleteBlokje(Blokje blokje)
         {
             using var ctx = new BlokjeKwijtContext();

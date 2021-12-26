@@ -29,7 +29,7 @@ namespace BlokjeKwijt.Web.Controllers
                 Breedte = blokje.Breedte,
                 Nopjes = blokje.Nopjes,
                 KleurId = blokje.KleurId,
-                ImageName = blokje.ImageName,
+                ImageName = blokje.ImageName
             };
         }
 
@@ -118,16 +118,27 @@ namespace BlokjeKwijt.Web.Controllers
         // GET: BlokjeController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            BlokjeViewModel blokjeVM = ConvertToBlokjeViewModel(_repo.GetSingleBlokje(id));
+            List<KleurViewModel> list = new();
+            _repo.FillColorList().ForEach(k =>
+            list.Add(ConvertToKleurViewModel(k)));
+
+            blokjeVM.KleurenLijst = list;
+            return View(blokjeVM);
         }
 
         // POST: BlokjeController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, BlokjeViewModel blokjeVM)
         {
             try
             {
+                if(blokjeVM.ImageFile != null)
+                {
+                    UploadFile(blokjeVM.ImageFile);
+                }
+                _repo.EditBlokje(ConvertToBlokjeData(blokjeVM));
                 return RedirectToAction(nameof(Index));
             }
             catch
