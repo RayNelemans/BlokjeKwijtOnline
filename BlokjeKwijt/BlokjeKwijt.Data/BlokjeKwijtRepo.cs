@@ -72,6 +72,13 @@ namespace BlokjeKwijt.Data
             ctx.Entry(blokje).State = EntityState.Added;
             ctx.SaveChanges();
         }
+
+        public void DeleteBlokje(Blokje blokje)
+        {
+            using var ctx = new BlokjeKwijtContext();
+            ctx.Entry(blokje).State = EntityState.Deleted;
+            ctx.SaveChanges();
+        }
         #endregion Blokje
 
         #region Kleur

@@ -201,3 +201,7 @@ C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Web\obj\Debu
 C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Web\obj\Debug\net5.0\Razor\Views\OverKwijt\Index.cshtml.g.cs
 C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Web\obj\Debug\net5.0\Razor\Views\OverKwijt\Over.cshtml.g.cs
 C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Web\obj\Debug\net5.0\Razor\Views\OverKwijt\Kwijt.cshtml.g.cs
+C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Web\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Web\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Web\bin\Debug\net5.0\System.IO.Pipelines.dll
+C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Web\obj\Debug\net5.0\Razor\Views\Blokje\Delete.cshtml.g.cs

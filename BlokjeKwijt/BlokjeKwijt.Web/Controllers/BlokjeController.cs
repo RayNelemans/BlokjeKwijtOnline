@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -28,7 +29,7 @@ namespace BlokjeKwijt.Web.Controllers
                 Breedte = blokje.Breedte,
                 Nopjes = blokje.Nopjes,
                 KleurId = blokje.KleurId,
-                ImageName = blokje.ImageName
+                ImageName = blokje.ImageName,
             };
         }
 
@@ -43,7 +44,7 @@ namespace BlokjeKwijt.Web.Controllers
                 Breedte = blokjeVM.Breedte,
                 Nopjes = blokjeVM.Nopjes,
                 KleurId = blokjeVM.KleurId,
-                ImageName = blokjeVM.ImageName
+                ImageName = blokjeVM.ImageFile.FileName
             };
         }
 
@@ -55,6 +56,19 @@ namespace BlokjeKwijt.Web.Controllers
                 KleurNaam = kleur.KleurNaam,
                 KleurCode = kleur.KleurCode
             };
+        }
+
+        private void UploadFile(IFormFile ufile)
+        {
+            if (ufile != null && ufile.Length > 0)
+            {
+                var fileName = Path.GetFileName(ufile.FileName);
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot\Images", fileName);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    ufile.CopyTo(fileStream);
+                }
+            }
         }
         // GET: BlokjeController
         public ActionResult Index()
@@ -91,6 +105,7 @@ namespace BlokjeKwijt.Web.Controllers
         {
             try
             {
+                UploadFile(blokjeVM.ImageFile);
                 _repo.AddBlokje(ConvertToBlokjeData(blokjeVM));
                 return RedirectToAction(nameof(Index));
             }
@@ -124,7 +139,7 @@ namespace BlokjeKwijt.Web.Controllers
         // GET: BlokjeController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(ConvertToBlokjeViewModel(_repo.GetSingleBlokje(id)));
         }
 
         // POST: BlokjeController/Delete/5
@@ -134,6 +149,7 @@ namespace BlokjeKwijt.Web.Controllers
         {
             try
             {
+                _repo.DeleteBlokje(_repo.GetSingleBlokje(id));
                 return RedirectToAction(nameof(Index));
             }
             catch

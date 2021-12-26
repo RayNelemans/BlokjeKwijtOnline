@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace BlokjeKwijt.Web.Models
         public int Nopjes { get; set; }
         public int KleurId { get; set; }
         public string ImageName { get; set; }
+        public IFormFile ImageFile { get; set; }
         public List<KleurViewModel> KleurenLijst { get; set; }
     }
 
