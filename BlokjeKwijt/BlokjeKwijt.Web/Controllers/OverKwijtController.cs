@@ -12,7 +12,6 @@ namespace BlokjeKwijt.Web.Controllers
     public class OverKwijtController : Controller
     {
         private BlokjeKwijtRepo _repo;
-        private int _blokjeId;
         public OverKwijtController()
         {
             _repo = new();
@@ -48,12 +47,6 @@ namespace BlokjeKwijt.Web.Controllers
         // GET: OverKwijtController
         public ActionResult Index(string bloknr, string lengte, string breedte, string nopjes)
         {
-            //List<BlokjeViewModel> blokjeViewModels = new();
-            //List<Blokje> temp = _repo.FilteredBlokjes(bloknr, lengte, breedte, nopjes);
-            //temp.ForEach(blokje =>
-            //blokjeViewModels.Add(ConvertToBlokjeViewModel(blokje)));
-            //return View(blokjeViewModels);
-
             VerzoekViewModel verzoekVM = new();
             List<BlokjeViewModel> blokjeViewModels = new();
             List<Blokje> temp = _repo.FilteredBlokjes(bloknr, lengte, breedte, nopjes);
@@ -68,7 +61,6 @@ namespace BlokjeKwijt.Web.Controllers
             VerzoekViewModel verzoekVM = new();
             verzoekVM.Id = id;
             verzoekVM.BlokjeId = blokjeId;
-            _blokjeId = blokjeId;
             return View(verzoekVM);
         }
 
