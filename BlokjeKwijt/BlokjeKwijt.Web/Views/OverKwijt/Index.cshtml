@@ -76,7 +76,7 @@
                 </td>
                 <td>
                     @Html.ActionLink("Over", "Over", new { id = Model.Id, blokjeId = item.BlokNummer }) |
-                    @Html.ActionLink("Kwijt", "Kwijt", new { id = Model.Id })
+                    @Html.ActionLink("Kwijt", "Kwijt", new { id = Model.Id, blokjeId = item.BlokNummer })
                 </td>
             </tr>
         }

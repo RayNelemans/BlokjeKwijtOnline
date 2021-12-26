@@ -174,7 +174,14 @@ namespace BlokjeKwijt.Data
             ctx.SaveChanges();
         }
 
-
+        public void Kwijt(BlokjesVerzoek blokjesVerzoek)
+        {
+            using var ctx = new BlokjeKwijtContext();
+            blokjesVerzoek.BlokjeOverKwijt = OverKwijt.Kwijt;
+            blokjesVerzoek.BlokjesVerzoekStatus = Status.Niet_Afgerond;
+            ctx.Add(blokjesVerzoek);
+            ctx.SaveChanges();
+        }
         #endregion OverKwijt
     }
 }

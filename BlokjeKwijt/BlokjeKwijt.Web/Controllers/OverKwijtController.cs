@@ -79,23 +79,27 @@ namespace BlokjeKwijt.Web.Controllers
             }
         }
 
-        //public ActionResult Kwijt(int id)
-        //{
+        public ActionResult Kwijt(int id, int blokjeId)
+        {
+            VerzoekViewModel verzoekVM = new();
+            verzoekVM.Id = id;
+            verzoekVM.BlokjeId = blokjeId;
+            return View(verzoekVM);
+        }
 
-        //}
-
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Kwijt(int id)
-        //{
-        //    try
-        //    {
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Kwijt(VerzoekViewModel verzoekVM)
+        {
+            try
+            {
+                _repo.Kwijt(ConvertToBlokjeVerzoekData(verzoekVM));
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
     }
 }

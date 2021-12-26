@@ -200,3 +200,4 @@ C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Web\obj\Debu
 C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Web\obj\Debug\net5.0\Razor\Views\Aanvraag\Delete.cshtml.g.cs
 C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Web\obj\Debug\net5.0\Razor\Views\OverKwijt\Index.cshtml.g.cs
 C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Web\obj\Debug\net5.0\Razor\Views\OverKwijt\Over.cshtml.g.cs
+C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Web\obj\Debug\net5.0\Razor\Views\OverKwijt\Kwijt.cshtml.g.cs
