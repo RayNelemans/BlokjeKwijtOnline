@@ -75,7 +75,7 @@
                     <img class="card-img-top" src="/Images/@Url.Content(item.ImageName)">
                 </td>
                 <td>
-                    @Html.ActionLink("Over", "Over", new { id = Model.Id }) |
+                    @Html.ActionLink("Over", "Over", new { id = Model.Id, blokjeId = item.BlokNummer }) |
                     @Html.ActionLink("Kwijt", "Kwijt", new { id = Model.Id })
                 </td>
             </tr>

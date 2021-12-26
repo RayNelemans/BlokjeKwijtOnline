@@ -165,12 +165,11 @@ namespace BlokjeKwijt.Data
             return verzoek;
         }
 
-        public void Over(BlokjesVerzoek blokjesVerzoek, int blokjeId)
+        public void Over(BlokjesVerzoek blokjesVerzoek)
         {
             using var ctx = new BlokjeKwijtContext();
             blokjesVerzoek.BlokjeOverKwijt = OverKwijt.Over;
             blokjesVerzoek.BlokjesVerzoekStatus = Status.Niet_Afgerond;
-            blokjesVerzoek.BlokjeId = blokjeId;
             ctx.Add(blokjesVerzoek);
             ctx.SaveChanges();
         }

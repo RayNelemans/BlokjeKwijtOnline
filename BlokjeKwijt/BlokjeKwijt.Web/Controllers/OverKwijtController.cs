@@ -38,7 +38,7 @@ namespace BlokjeKwijt.Web.Controllers
             return new BlokjesVerzoek
             {
                 Id = verzoekVM.Id,
-                BlokjeId = _blokjeId,
+                BlokjeId = verzoekVM.BlokjeId,
                 Email = verzoekVM.Email,
                 Naam = verzoekVM.Naam,
                 TelefoonNummer = verzoekVM.TelefoonNummer
@@ -63,9 +63,13 @@ namespace BlokjeKwijt.Web.Controllers
             return View(verzoekVM);
         }
 
-        public ActionResult Over(int id)
+        public ActionResult Over(int id, int blokjeId)
         {
-            return View();
+            VerzoekViewModel verzoekVM = new();
+            verzoekVM.Id = id;
+            verzoekVM.BlokjeId = blokjeId;
+            _blokjeId = blokjeId;
+            return View(verzoekVM);
         }
 
         [HttpPost]
@@ -74,7 +78,7 @@ namespace BlokjeKwijt.Web.Controllers
         {
             try
             {
-                _repo.Over(ConvertToBlokjeVerzoekData(verzoekVM), verzoekVM.BlokjeId);
+                _repo.Over(ConvertToBlokjeVerzoekData(verzoekVM));
                 return RedirectToAction(nameof(Index));
             }
             catch
