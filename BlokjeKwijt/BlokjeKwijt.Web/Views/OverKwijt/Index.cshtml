@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BlokjeKwijt.Web.Models.BlokjeViewModel>
+﻿@model BlokjeKwijt.Web.Models.VerzoekViewModel
 
 @{
     ViewData["Title"] = "Index";
@@ -20,34 +20,34 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Id)
+                @Html.DisplayNameFor(model => model.BlokjesList[0].Id)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BlokNummer)
+                @Html.DisplayNameFor(model => model.BlokjesList[0].BlokNummer)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Lengte)
+                @Html.DisplayNameFor(model => model.BlokjesList[0].Lengte)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Breedte)
+                @Html.DisplayNameFor(model => model.BlokjesList[0].Breedte)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Hoogte)
+                @Html.DisplayNameFor(model => model.BlokjesList[0].Hoogte)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Nopjes)
+                @Html.DisplayNameFor(model => model.BlokjesList[0].Nopjes)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.KleurId)
+                @Html.DisplayNameFor(model => model.BlokjesList[0].KleurId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ImageName)
+                @Html.DisplayNameFor(model => model.BlokjesList[0].ImageName)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var item in Model.BlokjesList)
         {
             <tr>
                 <td>
@@ -75,8 +75,8 @@
                     <img class="card-img-top" src="/Images/@Url.Content(item.ImageName)">
                 </td>
                 <td>
-                    @Html.ActionLink("Over", "Over", new { id = item.Id }) |
-                    @Html.ActionLink("Kwijt", "Kwijt", new { id = item.Id })
+                    @Html.ActionLink("Over", "Over", new { id = Model.Id }) |
+                    @Html.ActionLink("Kwijt", "Kwijt", new { id = Model.Id })
                 </td>
             </tr>
         }

@@ -152,5 +152,30 @@ namespace BlokjeKwijt.Data
             ctx.SaveChanges();
         }
         #endregion Aanvraag
+
+        #region OverKwijt
+
+        public BlokjesVerzoek GetSingleVerzoek(int id)
+        {
+            BlokjesVerzoek verzoek = new();
+            using (var ctx = new BlokjeKwijtContext())
+            {
+                verzoek = ctx.BlokjesVerzoeken.FirstOrDefault(b => b.Id == id);
+            }
+            return verzoek;
+        }
+
+        public void Over(BlokjesVerzoek blokjesVerzoek, int blokjeId)
+        {
+            using var ctx = new BlokjeKwijtContext();
+            blokjesVerzoek.BlokjeOverKwijt = OverKwijt.Over;
+            blokjesVerzoek.BlokjesVerzoekStatus = Status.Niet_Afgerond;
+            blokjesVerzoek.BlokjeId = blokjeId;
+            ctx.Add(blokjesVerzoek);
+            ctx.SaveChanges();
+        }
+
+
+        #endregion OverKwijt
     }
 }

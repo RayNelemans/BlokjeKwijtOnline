@@ -1,30 +1,20 @@
-﻿using System;
+﻿using BlokjeKwijt.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace BlokjeKwijt.Data
+namespace BlokjeKwijt.Web.Models
 {
-    public class BlokjesVerzoek
+    public class VerzoekViewModel
     {
         public int Id { get; set; }
         public int BlokjeId { get; set; }
         public string Naam { get; set; }
         public string TelefoonNummer { get; set; }
         public string Email { get; set; }
+        public List<BlokjeViewModel> BlokjesList { get; set; }
         public OverKwijt BlokjeOverKwijt { get; set; }
         public Status BlokjesVerzoekStatus { get; set; }
-    }
-
-    public enum OverKwijt
-    {
-        Over,
-        Kwijt
-    }
-    public enum Status
-    {
-        Afgerond,
-        Niet_Afgerond
     }
 }

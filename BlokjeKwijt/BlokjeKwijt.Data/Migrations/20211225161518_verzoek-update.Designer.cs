@@ -3,14 +3,16 @@ using BlokjeKwijt.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BlokjeKwijt.Data.Migrations
 {
     [DbContext(typeof(BlokjeKwijtContext))]
-    partial class BlokjeKwijtContextModelSnapshot : ModelSnapshot
+    [Migration("20211225161518_verzoek-update")]
+    partial class verzoekupdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
