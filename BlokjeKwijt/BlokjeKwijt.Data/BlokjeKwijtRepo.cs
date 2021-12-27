@@ -216,6 +216,14 @@ namespace BlokjeKwijt.Data
             ctx.Add(blokjesVerzoek);
             ctx.SaveChanges();
         }
+
+        public void EditVerzoek(BlokjesVerzoek blokjesVerzoek)
+        {
+            using var ctx = new BlokjeKwijtContext();
+            blokjesVerzoek.BlokjesVerzoekStatus = Status.Afgerond;
+            ctx.Update(blokjesVerzoek);
+            ctx.SaveChanges();
+        }
         #endregion OverKwijt
     }
 }

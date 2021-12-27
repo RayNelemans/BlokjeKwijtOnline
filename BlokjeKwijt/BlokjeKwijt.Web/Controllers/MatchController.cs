@@ -32,6 +32,20 @@ namespace BlokjeKwijt.Web.Controllers
             };
         }
 
+        private BlokjesVerzoek ConvertToVerzoekData(VerzoekViewModel verzoekVM)
+        {
+            return new BlokjesVerzoek
+            {
+                Id = verzoekVM.Id,
+                BlokjeId = verzoekVM.BlokjeId,
+                Naam = verzoekVM.Naam,
+                Email = verzoekVM.Email,
+                TelefoonNummer = verzoekVM.TelefoonNummer,
+                BlokjeOverKwijt = verzoekVM.BlokjeOverKwijt,
+                BlokjesVerzoekStatus = verzoekVM.BlokjesVerzoekStatus
+            };
+        }
+
         // GET: MatchController
         public ActionResult Index()
         {
@@ -55,11 +69,19 @@ namespace BlokjeKwijt.Web.Controllers
             return View(matchVM);
         }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Match(int id, VerzoekViewModel verzoekVM)
-        //{
-
-        //}
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Match(int id, VerzoekViewModel verzoekVM)
+        {
+            try
+            {
+                _repo.EditVerzoek(ConvertToVerzoekData(verzoekVM));
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
     }
 }
