@@ -184,7 +184,7 @@ namespace BlokjeKwijt.Data
             List<BlokjesVerzoek> verzoeken = new();
             using (var ctx = new BlokjeKwijtContext())
             {
-                verzoeken = ctx.BlokjesVerzoeken.Where(b => b.BlokjeId == blokjeId).ToList();
+                verzoeken = ctx.BlokjesVerzoeken.Where(b => b.BlokjeId == blokjeId && (int)b.BlokjeOverKwijt != overKwijt).ToList();
             }
             return verzoeken;
         }
