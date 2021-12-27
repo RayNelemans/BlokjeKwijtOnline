@@ -179,6 +179,16 @@ namespace BlokjeKwijt.Data
             return verzoeken;
         }
 
+        public List<BlokjesVerzoek> GetVerzoekenWithBlokjeId(int blokjeId, int overKwijt)
+        {
+            List<BlokjesVerzoek> verzoeken = new();
+            using (var ctx = new BlokjeKwijtContext())
+            {
+                verzoeken = ctx.BlokjesVerzoeken.Where(b => b.BlokjeId == blokjeId).ToList();
+            }
+            return verzoeken;
+        }
+
         public BlokjesVerzoek GetSingleVerzoek(int id)
         {
             BlokjesVerzoek verzoek = new();

@@ -30,7 +30,7 @@
             <tbody>
                 @foreach (var item in Model.VerzoekenList)
                 {
-                    if ((int)item.BlokjeOverKwijt == 0 && item.BlokjesVerzoekStatus == BlokjeKwijt.Data.Status.Niet_Afgerond)
+                    if ((int)item.BlokjeOverKwijt == 1 && item.BlokjesVerzoekStatus == BlokjeKwijt.Data.Status.Niet_Afgerond)
                     {
                         <tr>
                             <td>
@@ -49,7 +49,7 @@
                                 @Html.DisplayFor(modelItem => item.BlokjesVerzoekStatus)
                             </td>
                             <td>
-                                @Html.ActionLink("Match", "Match", new { id = item.Id })
+                                @Html.ActionLink("Match", "Match", new { blokjeId = item.BlokjeId, kwijtOver = (int)item.BlokjeOverKwijt })
                             </td>
                         </tr>
                     }
@@ -81,7 +81,7 @@
             <tbody>
                 @foreach (var item in Model.VerzoekenList)
                 {
-                    if ((int)item.BlokjeOverKwijt == 1 && item.BlokjesVerzoekStatus == BlokjeKwijt.Data.Status.Niet_Afgerond)
+                    if ((int)item.BlokjeOverKwijt == 0 && item.BlokjesVerzoekStatus == BlokjeKwijt.Data.Status.Niet_Afgerond)
                     {
                         <tr>
                             <td>
@@ -100,7 +100,7 @@
                                 @Html.DisplayFor(modelItem => item.BlokjesVerzoekStatus)
                             </td>
                             <td>
-                                @Html.ActionLink("Match", "Match", new { id = item.Id })
+                                @Html.ActionLink("Match", "Match", new { blokjeId = item.BlokjeId, kwijtOver = (int)item.BlokjeOverKwijt })
                             </td>
                         </tr>
                     }

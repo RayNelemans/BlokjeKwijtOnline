@@ -207,3 +207,4 @@ C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Web\bin\Debu
 C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Web\obj\Debug\net5.0\Razor\Views\Blokje\Delete.cshtml.g.cs
 C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Web\obj\Debug\net5.0\Razor\Views\Blokje\Edit.cshtml.g.cs
 C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Web\obj\Debug\net5.0\Razor\Views\Match\Index.cshtml.g.cs
+C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Web\obj\Debug\net5.0\Razor\Views\Match\Match.cshtml.g.cs

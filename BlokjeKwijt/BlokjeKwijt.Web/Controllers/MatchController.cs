@@ -43,5 +43,23 @@ namespace BlokjeKwijt.Web.Controllers
             matchVM.VerzoekenList = verzoekViewModels;
             return View(matchVM);
         }
+
+        public ActionResult Match(int blokjeId, int kwijtOver)
+        {
+            MatchViewModel matchVM = new();
+            List<VerzoekViewModel> verzoekViewModels = new();
+            List<BlokjesVerzoek> temp = _repo.GetVerzoekenWithBlokjeId(blokjeId, kwijtOver);
+            temp.ForEach(verzoek =>
+            verzoekViewModels.Add(ConvertToVerzoekViewModel(verzoek)));
+            matchVM.VerzoekenList = verzoekViewModels;
+            return View(matchVM);
+        }
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Match(int id, VerzoekViewModel verzoekVM)
+        //{
+
+        //}
     }
 }

@@ -1,0 +1,54 @@
+﻿@model BlokjeKwijt.Web.Models.MatchViewModel
+
+@{
+    ViewData["Title"] = "Match";
+}
+
+<h1>Match</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VerzoekenList[0].Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VerzoekenList[0].BlokjeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VerzoekenList[0].Naam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VerzoekenList[0].BlokjeOverKwijt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VerzoekenList[0].BlokjesVerzoekStatus)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.VerzoekenList)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BlokjeId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Naam)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BlokjeOverKwijt)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BlokjesVerzoekStatus)
+                </td>
+                <td>
+                    @Html.ActionLink("Match", "Match", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
