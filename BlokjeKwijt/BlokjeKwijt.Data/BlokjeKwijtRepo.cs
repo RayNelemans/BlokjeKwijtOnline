@@ -169,6 +169,16 @@ namespace BlokjeKwijt.Data
 
         #region OverKwijt
 
+        public List<BlokjesVerzoek> GetVerzoeken()
+        {
+            List<BlokjesVerzoek> verzoeken = new();
+            using (var ctx = new BlokjeKwijtContext())
+            {
+                verzoeken = ctx.BlokjesVerzoeken.ToList();
+            }
+            return verzoeken;
+        }
+
         public BlokjesVerzoek GetSingleVerzoek(int id)
         {
             BlokjesVerzoek verzoek = new();

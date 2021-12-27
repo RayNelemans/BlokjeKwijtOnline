@@ -5,8 +5,9 @@
     "\\BlokjeKwijt\\BlokjeKwijt.Web",
     "\\BlokjeKwijt\\BlokjeKwijt.Web\\Controllers",
     "\\BlokjeKwijt\\BlokjeKwijt.Web\\Views",
-    "\\BlokjeKwijt\\BlokjeKwijt.Web\\Views\\Blokje"
+    "\\BlokjeKwijt\\BlokjeKwijt.Web\\Views\\Blokje",
+    "\\BlokjeKwijt\\BlokjeKwijt.Web\\Views\\OverKwijt"
   ],
-  "SelectedNode": "\\BlokjeKwijt\\BlokjeKwijt.Web\\Views\\Blokje\\Index.cshtml",
+  "SelectedNode": "\\BlokjeKwijt\\BlokjeKwijt.Web\\Views\\OverKwijt\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }
