@@ -4,14 +4,14 @@
     "C:\\Users\\rayne\\Documents\\GitHub\\BlokjeKwijt\\BlokjeKwijt\\BlokjeKwijt.Web\\BlokjeKwijt.Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rayne\\Documents\\GitHub\\BlokjeKwijt\\BlokjeKwijt\\BlokjeKwijt.Web\\BlokjeKwijt.Web.csproj": {
+    "C:\\Users\\rayne\\Documents\\GitHub\\BlokjeKwijt\\BlokjeKwijt\\BlokjeKwijt.Data\\BlokjeKwijt.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rayne\\Documents\\GitHub\\BlokjeKwijt\\BlokjeKwijt\\BlokjeKwijt.Web\\BlokjeKwijt.Web.csproj",
-        "projectName": "BlokjeKwijt.Web",
-        "projectPath": "C:\\Users\\rayne\\Documents\\GitHub\\BlokjeKwijt\\BlokjeKwijt\\BlokjeKwijt.Web\\BlokjeKwijt.Web.csproj",
+        "projectUniqueName": "C:\\Users\\rayne\\Documents\\GitHub\\BlokjeKwijt\\BlokjeKwijt\\BlokjeKwijt.Data\\BlokjeKwijt.Data.csproj",
+        "projectName": "BlokjeKwijt.Data",
+        "projectPath": "C:\\Users\\rayne\\Documents\\GitHub\\BlokjeKwijt\\BlokjeKwijt\\BlokjeKwijt.Data\\BlokjeKwijt.Data.csproj",
         "packagesPath": "C:\\Users\\rayne\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rayne\\Documents\\GitHub\\BlokjeKwijt\\BlokjeKwijt\\BlokjeKwijt.Web\\obj\\",
+        "outputPath": "C:\\Users\\rayne\\Documents\\GitHub\\BlokjeKwijt\\BlokjeKwijt\\BlokjeKwijt.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rayne\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,100 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.12, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.12, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\rayne\\Documents\\GitHub\\BlokjeKwijt\\BlokjeKwijt\\BlokjeKwijt.Web\\BlokjeKwijt.Web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\rayne\\Documents\\GitHub\\BlokjeKwijt\\BlokjeKwijt\\BlokjeKwijt.Web\\BlokjeKwijt.Web.csproj",
+        "projectName": "BlokjeKwijt.Web",
+        "projectPath": "C:\\Users\\rayne\\Documents\\GitHub\\BlokjeKwijt\\BlokjeKwijt\\BlokjeKwijt.Web\\BlokjeKwijt.Web.csproj",
+        "packagesPath": "C:\\Users\\rayne\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rayne\\Documents\\GitHub\\BlokjeKwijt\\BlokjeKwijt\\BlokjeKwijt.Web\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\rayne\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\rayne\\Documents\\GitHub\\BlokjeKwijt\\BlokjeKwijt\\BlokjeKwijt.Data\\BlokjeKwijt.Data.csproj": {
+                "projectPath": "C:\\Users\\rayne\\Documents\\GitHub\\BlokjeKwijt\\BlokjeKwijt\\BlokjeKwijt.Data\\BlokjeKwijt.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.12, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.12, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -57,7 +151,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }

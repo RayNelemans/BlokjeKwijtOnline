@@ -1,0 +1,15 @@
+C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Data\bin\Debug\net5.0\BlokjeKwijt.Data.deps.json
+C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Data\bin\Debug\net5.0\BlokjeKwijt.Data.runtimeconfig.json
+C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Data\bin\Debug\net5.0\BlokjeKwijt.Data.runtimeconfig.dev.json
+C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Data\bin\Debug\net5.0\BlokjeKwijt.Data.dll
+C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Data\bin\Debug\net5.0\ref\BlokjeKwijt.Data.dll
+C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Data\bin\Debug\net5.0\BlokjeKwijt.Data.pdb
+C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Data\obj\Debug\net5.0\BlokjeKwijt.Data.csproj.AssemblyReference.cache
+C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Data\obj\Debug\net5.0\BlokjeKwijt.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Data\obj\Debug\net5.0\BlokjeKwijt.Data.AssemblyInfoInputs.cache
+C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Data\obj\Debug\net5.0\BlokjeKwijt.Data.AssemblyInfo.cs
+C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Data\obj\Debug\net5.0\BlokjeKwijt.Data.csproj.CoreCompileInputs.cache
+C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Data\obj\Debug\net5.0\BlokjeKwijt.Data.dll
+C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Data\obj\Debug\net5.0\ref\BlokjeKwijt.Data.dll
+C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Data\obj\Debug\net5.0\BlokjeKwijt.Data.pdb
+C:\Users\rayne\Documents\GitHub\BlokjeKwijt\BlokjeKwijt\BlokjeKwijt.Data\obj\Debug\net5.0\BlokjeKwijt.Data.genruntimeconfig.cache
