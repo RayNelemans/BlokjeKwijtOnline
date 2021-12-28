@@ -4,55 +4,92 @@
     ViewData["Title"] = "Match";
 }
 
-<h1>Match</h1>
-<form asp-action="Match">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.VerzoekenList[0].Id)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.VerzoekenList[0].BlokjeId)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.VerzoekenList[0].Naam)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.VerzoekenList[0].BlokjeOverKwijt)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.VerzoekenList[0].BlokjesVerzoekStatus)
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model.VerzoekenList)
-            {
+<h1>Gekozen verzoek</h1>
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Verzoek.Id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Verzoek.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Verzoek.BlokjeId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Verzoek.BlokjeId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Verzoek.Naam)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Verzoek.Naam)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Verzoek.BlokjeOverKwijt)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Verzoek.BlokjeOverKwijt)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Verzoek.BlokjesVerzoekStatus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Verzoek.BlokjesVerzoekStatus)
+        </dd>
+    </dl>
+</div>
+<h1>Mogelijke matches</h1>
+<div>
+    <form asp-action="Match">
+        <table class="table">
+            <thead>
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Id)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.BlokjeId)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Naam)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.BlokjeOverKwijt)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.BlokjesVerzoekStatus)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Match", "Match", new { id = item.Id })
-                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.VerzoekenList[0].Id)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.VerzoekenList[0].BlokjeId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.VerzoekenList[0].Naam)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.VerzoekenList[0].BlokjeOverKwijt)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.VerzoekenList[0].BlokjesVerzoekStatus)
+                    </th>
                 </tr>
-            }
-        </tbody>
-    </table>
-    <div class="form-group">
-        <input type="submit" value="Match" class="btn btn-primary" />
-    </div>
-</form>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.VerzoekenList)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BlokjeId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Naam)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BlokjeOverKwijt)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BlokjesVerzoekStatus)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Match", "Match", new { id = item.Id })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="form-group">
+            <input type="submit" value="Match" class="btn btn-primary" />
+        </div>
+    </form>
+</div>

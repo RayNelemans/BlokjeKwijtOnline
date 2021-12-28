@@ -58,24 +58,29 @@ namespace BlokjeKwijt.Web.Controllers
             return View(matchVM);
         }
 
-        public ActionResult Match(int blokjeId, int kwijtOver)
+        public ActionResult Match(int id, int blokjeId, int kwijtOver)
         {
             MatchViewModel matchVM = new();
+            VerzoekViewModel verzoekVM = new();
             List<VerzoekViewModel> verzoekViewModels = new();
             List<BlokjesVerzoek> temp = _repo.GetVerzoekenWithBlokjeId(blokjeId, kwijtOver);
             temp.ForEach(verzoek =>
             verzoekViewModels.Add(ConvertToVerzoekViewModel(verzoek)));
+
             matchVM.VerzoekenList = verzoekViewModels;
+            verzoekVM = ConvertToVerzoekViewModel(_repo.GetSingleVerzoek(id));
+            matchVM.Verzoek = verzoekVM;
+
             return View(matchVM);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Match(int id, VerzoekViewModel verzoekVM)
+        public ActionResult Match(int id)
         {
             try
             {
-                _repo.EditVerzoek(ConvertToVerzoekData(verzoekVM));
+                _repo.EditVerzoek(_repo.GetSingleVerzoek(id));
                 return RedirectToAction(nameof(Index));
             }
             catch

@@ -7,6 +7,7 @@ namespace BlokjeKwijt.Web.Models
 {
     public class MatchViewModel
     {
+        public VerzoekViewModel Verzoek { get; set; }
         public List<VerzoekViewModel> VerzoekenList { get; set; }
     }
 }

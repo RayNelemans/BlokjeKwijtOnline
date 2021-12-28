@@ -49,7 +49,7 @@
                                 @Html.DisplayFor(modelItem => item.BlokjesVerzoekStatus)
                             </td>
                             <td>
-                                @Html.ActionLink("Match", "Match", new { blokjeId = item.BlokjeId, kwijtOver = (int)item.BlokjeOverKwijt })
+                                @Html.ActionLink("Match", "Match", new { id = item.Id, blokjeId = item.BlokjeId, kwijtOver = (int)item.BlokjeOverKwijt })
                             </td>
                         </tr>
                     }
@@ -100,7 +100,7 @@
                                 @Html.DisplayFor(modelItem => item.BlokjesVerzoekStatus)
                             </td>
                             <td>
-                                @Html.ActionLink("Match", "Match", new { blokjeId = item.BlokjeId, kwijtOver = (int)item.BlokjeOverKwijt })
+                                @Html.ActionLink("Match", "Match", new { id = item.Id, blokjeId = item.BlokjeId, kwijtOver = (int)item.BlokjeOverKwijt })
                             </td>
                         </tr>
                     }
