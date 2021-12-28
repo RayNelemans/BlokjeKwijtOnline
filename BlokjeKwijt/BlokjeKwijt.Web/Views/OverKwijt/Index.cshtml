@@ -1,0 +1,84 @@
+﻿@model BlokjeKwijt.Web.Models.VerzoekViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Over/Kwijt</h1>
+
+<form asp-controller="OverKwijt" asp-action="Index" method="get">
+    <p>
+        Blok Nummer: <input type="text" name="bloknr" />
+        Lengte: <input type="text" name="lengte" />
+        Breedte: <input type="text" name="breedte" />
+        Nopjes: <input type="text" name="Nopjes" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BlokjesList[0].Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BlokjesList[0].BlokNummer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BlokjesList[0].Lengte)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BlokjesList[0].Breedte)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BlokjesList[0].Hoogte)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BlokjesList[0].Nopjes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BlokjesList[0].KleurId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BlokjesList[0].ImageName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.BlokjesList)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BlokNummer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Lengte)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Breedte)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hoogte)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nopjes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KleurId)
+                </td>
+                <td>
+                    <img class="card-img-top" src="/Images/@Url.Content(item.ImageName)">
+                </td>
+                <td>
+                    @Html.ActionLink("Over", "Over", new { id = Model.Id, blokjeId = item.BlokNummer }) |
+                    @Html.ActionLink("Kwijt", "Kwijt", new { id = Model.Id, blokjeId = item.BlokNummer })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
