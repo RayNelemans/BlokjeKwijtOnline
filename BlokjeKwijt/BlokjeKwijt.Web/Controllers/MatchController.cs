@@ -76,11 +76,12 @@ namespace BlokjeKwijt.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Match(int id)
+        public ActionResult Match(int match1, int id)
         {
             try
             {
                 _repo.EditVerzoek(_repo.GetSingleVerzoek(id));
+                _repo.EditVerzoek(_repo.GetSingleVerzoek(match1));
                 return RedirectToAction(nameof(Index));
             }
             catch

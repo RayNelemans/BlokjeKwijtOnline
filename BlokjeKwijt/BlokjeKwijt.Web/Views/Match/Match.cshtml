@@ -82,7 +82,7 @@
                             @Html.DisplayFor(modelItem => item.BlokjesVerzoekStatus)
                         </td>
                         <td>
-                            @Html.ActionLink("Match", "Match", new { id = item.Id })
+                            <input checked type="radio" name="match1" id="@item.Id" value="@item.Id"/>
                         </td>
                     </tr>
                 }
